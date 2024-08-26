@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="base::layout(~{::section})"
+>
+  <head>
+    <title>Login Form</title>
+     
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h2>Login</h2>
+
+        <form action="/login" method="post" th:object="${user}">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              id="name"
+              
+              placeholder="Your Email"
+              th:value="${user.email}"
+             
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <button type="reset" class="btn btn-primary">reset</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

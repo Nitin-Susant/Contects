@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Round Image View</title>
+    <style>
+      #image-container {
+        overflow: hidden;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #uploaded-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: inherit; /* Inherits the border-radius from the parent container */
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      #uploaded-image:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="image-container">
+      <img id="uploaded-image" src="first.png" alt="Uploaded Image" />
+    </div>
+  </body>
+</html>

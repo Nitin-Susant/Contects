@@ -1,0 +1,25 @@
+  /* CSS for the navigation bar */
+  .navbar {
+    
+    overflow: visible;
+    background-color: #333; /* Background color for the navbar */
+}
+
+.navbar a {
+    float: left; /* Float the links to the left */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd; /* Background color on hover */
+    color: rgb(56, 10, 10); /* Text color on hover */
+}
+
+/* Style for the "Home" link on the right side */
+.navbar-right {
+    float: right; /* Float the right-aligned link to the right */
+}

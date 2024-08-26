@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="user/base::layout(~{::section})"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <section>
+      <label for="cars">Choose a car:</label>
+
+      <form th:action="@{/user/savecontect}" method="post" th:object="${cont}">
+        <select
+          name="cars"
+          id="cars"
+          th:value="${cont.cars}"
+        
+        >
+        <option th:each="item : ${allcars}" th:text="${item}"></option>
+        </select>
+
+        <div class="mb-3">
+          <input
+            type="text"
+            th:value="${cont.contectId}"
+            name="contectId"
+            hidden
+          />
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            name="email"
+            th:value="${cont.email}"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input
+            type="text"
+            name="userName"
+            th:value="${cont.userName}"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nick Name</label>
+          <input
+            type="text"
+            name="nickName"
+            th:value="${cont.nickName}"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Number</label>
+          <input
+            type="tel"
+            name="phoneNumber"
+            th:value="${cont.phoneNumber}"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Working</label>
+          <input
+            type="text"
+            name="working"
+            th:value="${cont.working}"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            name="about"
+            th:text="${cont.about}"
+            placeholder="Leave a comment here"
+            id="floatingTextarea"
+          ></textarea>
+          <label for="floatingTextarea">Comments</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </section>
+  </body>
+</html>

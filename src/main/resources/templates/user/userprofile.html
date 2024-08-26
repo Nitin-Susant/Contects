@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+</head>
+
+<body>
+	<section>
+		<div class="image-container">
+			<img class="uploaded-image" th:src="@{/images/first.png}" alt="Round Image" />
+
+		</div>
+		<form th:action="@{/user/image_store}" method="post" enctype="multipart/form-data" >
+			<input type="file" name="image" />
+			<button type="submit">submit</button>
+		</form>
+		
+		<form  >
+			
+		</form>
+		<div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>IsActive</th>
+						<th>Role</th>
+						<th>PhoneNumber</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td th:text="${user1.userName}"></td>
+						<td th:text="${user1.email}"></td>
+						<td th:text="${user1.isEnable}"></td>
+						<td th:text="${user1.role}"></td>
+						<td th:text="${user1.about}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+</head>
+
+<body>
+	<section>
+
+		<form th:action="@{/user/searchUser}" method="get">
+			<input type="text" placeholder="search name" name="users">
+			<input type="submit">
+		</form>
+
+		<table class="table tabledesign">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="c : ${allcontect}">
+					<td th:text="${c.contectId}">1</td>
+					<td th:text="${c.nickName}">1</td>
+					<td th:text="${c.phoneNumber}">1</td>
+					<td>
+						<a th:href="@{/user/viewprofile}">
+							<span th:text="${c.email}"></span>
+						</a>
+					</td>
+					<td>
+						<form th:action="@{'/user/editContect/'+${c.contectId}}" method="post">
+							<button type="submit" class="btn btn-primary">Edit</button>
+						</form>
+						<form th:action="@{'/user/deleteContect/'+${c.contectId}}" method="post">
+							<button type="submit" class="btn btn-primary">Delete</button>
+						</form>
+						<form th:action="@{'/user/addfav/'+${c.contectId}}" method="post">
+							<button type="submit" class="btn btn-primary">fav</button>
+						</form>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</body>
+
+</html>

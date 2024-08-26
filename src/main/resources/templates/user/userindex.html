@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html
+xmlns:th="http://www.thymeleaf.org"
+   th:replace="user/base::layout(~{::section})"
+>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ 
+</head>
+<body>
+<section><h1 style="color: red;">my name is mansh
+<span th:text="${user}" ></span>
+</h1></section>
+</body>
+</html>
